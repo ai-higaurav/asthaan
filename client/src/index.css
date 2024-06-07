@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'ModerEraBlack';
+  src: local('ModernEraBlack'), url('./assets/font/modern-era-black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ModernEraMedium';
+  src: local('ModernEraMedium'), url('./assets/font/modern-era-medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ModernEraRegular';
+  src: local('ModernEraRegular'), url('./assets/font/modern-era-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ModernEraLight';
+  src: local('ModernEralight'), url('./assets/font/modern-era-light.ttf') format('truetype');
+}
+
+@layer base {
+  html{
+    font-family: 'ModernEraRegular',sans-serif;
+  }
+}
+  
