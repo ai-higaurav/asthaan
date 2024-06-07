@@ -18,10 +18,17 @@
   font-family: 'ModernEraLight';
   src: local('ModernEralight'), url('./assets/font/modern-era-light.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: 'RobotoRegular';
+  src: local('RobotoRegular'), url('./assets/font/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'RobotoThin';
+  src: local('RobotoThin'), url('./assets/font/Roboto-Thin.ttf') format('truetype');
+}
 @layer base {
   html{
-    font-family: 'ModernEraRegular',sans-serif;
+    font-family: 'RobotoRegular',sans-serif;
   }
 }
   

@@ -38,7 +38,9 @@ module.exports = {
       'ModerEraBlack':['ModerEraBlack'],
       'ModernEraMedium':['ModernEraMedium'],
       'ModernEraRegular':['ModernEraRegular'],
-      'ModernEraLight':['ModernEraLight']
+      'ModernEraLight':['ModernEraLight'],
+      'RobotoRegular':['RobotoRegular'],
+      'RobotoThin':['RobotoThin']
 
     }
 
