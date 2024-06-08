@@ -17,7 +17,7 @@ const Card:React.FC = () => {
                             <hr className="mt-3"/>                    
                         </section>
                         <section>
-                            <button className="bg-blue-600 px-4 py-2 mt-5 text-white">View Details</button>
+                            <button className="bg-orange-600 px-4 py-2 mt-5 text-white">View Details</button>
                         </section>
               </section>
             </div>

@@ -12,7 +12,7 @@ const Hero:React.FC = () => {
         <p className="">Discover a digital platform where property transactions are streamlined. Buy, sell, or rent seamlessly without distractions. Your property journey simplified.</p>
         <section className="flex w-full mt-3 lg:mt-5" >
             <Input placeholder="City , Address" className="rounded-bl-3xl rounded-tr-none focus-visible:ring-transparent focus-visible:bg-gray-300 "/>
-            <Button className="rounded-none">Search</Button>
+            <Button className="rounded-none bg-orange-600">Search</Button>
         </section>
       </section>
 
