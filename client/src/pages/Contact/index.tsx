@@ -5,7 +5,7 @@ const Contact:React.FC = () => {
       <div className='w-full flex justify-center items-center bg-gray-200'>
           <section className='w-full max-w-[1440px] px-3 flex flex-col'>
               <section>
-                <h1 className='text-2xl lg:text-4xl pt-10 font-ModerEraBlack py-5 px-3'>Any Question ? Reach Us </h1>
+                <h1 className='text-2xl lg:text-4xl pt-10 font-ModerEraBlack py-5 px-3' id='contactus'>Any Question ? Reach Us </h1>
               </section>
               <section className='py-10 flex gap-5 items-center px-3 flex-wrap  justify-center xl:justify-between'>
 

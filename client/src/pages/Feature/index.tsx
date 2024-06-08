@@ -4,7 +4,7 @@ const Feature :React.FC = () => {
   return (
     <div className='flex  justify-center items-center'>
         <section className='w-full max-w-[1440px] py-10 flex flex-col gap-20   px-5 '>
-            <h1  className='text-2xl lg:text-4xl font-ModerEraBlack px-3'>Why Choose Us ?</h1>
+            <h1  className='text-2xl lg:text-4xl font-ModerEraBlack px-3' >Why Choose Us ?</h1>
 
        <section className='flex flex-col  gap-10 lg:gap-5  items-center lg:flex-row'>
         <section>
