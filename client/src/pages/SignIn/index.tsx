@@ -12,7 +12,7 @@ const SignIn:React.FC = () => {
   return (
     <div className='flex justify-center items-center'>
         <section className='mt-48'>
-            <Login signUpUrl='/signup'/>           
+            <Login signUpUrl='/signup' />           
         </section>
     </div>
    

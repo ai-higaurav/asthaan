@@ -2,9 +2,16 @@ import { Link } from "react-router-dom";
 import { useAuth } from "@clerk/clerk-react";
 import { UserButton } from "@clerk/clerk-react";
 import { PulseLoader } from 'react-spinners';
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
     const {isSignedIn , isLoaded }=useAuth()
+    const {pathname}= useLocation()
+
+    if(pathname === '/dashboard'){
+        return null;
+    }
+    
 
     return (
         <nav className='flex w-full justify-center items-center overflow-hidden absolute top-0'>
@@ -23,7 +30,10 @@ const Navbar = () => {
                                 <PulseLoader color="#36d7b7"/>
                                 :
                                 isLoaded && isSignedIn ?                                
-                                <UserButton />
+                                <>
+                                    <Link to="/dashboard">Dashboard</Link>
+                                    <UserButton />
+                                </>
                                 :
                                  <>
                                 <Link to="/signin">Log In</Link>
