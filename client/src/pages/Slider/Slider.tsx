@@ -16,7 +16,7 @@ const Slider:React.FC = () => {
     <>
     <section className='flex justify-center bg-gray-100'>
       <section className=' max-w-[1440px] w-full'>
-        <h1 className='text-4xl font-ModerEraBlack py-10 px-3'>Recent Properties</h1>
+        <h1 className='text-2xl lg:text-4xl font-ModerEraBlack py-10 px-3' id='properties'>Recent Properties</h1>
       </section>
     </section>
     <div className='w-full flex justify-center items-center flex-col pb-20 bg-gray-100 '>

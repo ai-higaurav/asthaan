@@ -8,8 +8,7 @@ const Navbar = () => {
                 <section className='flex gap-4 justify-center items-center'>
                     <div className='flex gap-4 justify-center items-center sm:text-xl'>
                         <section className='hidden sm:flex gap-4 justify-center items-center sm:text-xl text-gray-600'>
-                            <Link to="/">Home</Link>
-                            <Link to="/">Properties</Link>
+                            <Link to="/"><a href="#Properties">Properties</a></Link>
                             <Link to="/">Agents</Link>
                             <Link to="/">Contact</Link>
                         </section>
