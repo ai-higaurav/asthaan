@@ -1,5 +1,6 @@
 import Slider from "../Slider/Slider";
 import Hero from "../Hero";
+import Feature from "../Feature";
 
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
    <>
     <Hero/>
     <Slider/>
+    <Feature/>
    </>
   );
 };
