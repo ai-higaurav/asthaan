@@ -6,7 +6,7 @@ const Footer:React.FC = () => {
     <footer className='w-full flex justify-center items-center py-10'>
         <div className='w-full max-w-[1440px] grid grid-cols-1 gap-10 px-10 sm:px-5 sm:grid-cols-2 lg:grid-cols-4 '>
             <section className=' flex flex-col gap-5'>
-                <h1 className='font-semibold text-xl'>About Us</h1>
+                <h1 className='text-2xl lg:text-4xl font-semibold text-xl'>About Us</h1>
                 <section>
                     <p>Welcome to Asthaan - your go-to destination for buying, selling, and renting property. Simplifying real estate journeys with our user-friendly platform. Discover your perfect property today.</p>
                 </section>
