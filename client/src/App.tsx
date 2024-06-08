@@ -1,4 +1,4 @@
-import Hero from "./pages/Hero";
+import Home from "./pages/Home";
 import Navbar from "./pages/Navbar";
 import {
   BrowserRouter as Router,
@@ -12,7 +12,7 @@ const App = () => {
        <Router>
         <Navbar/>
         <Routes>
-          <Route path="/" element={<Hero/>} />
+          <Route path="/" element={<Home/>} />
         </Routes>
        </Router>
       </>
