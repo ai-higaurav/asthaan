@@ -14,12 +14,12 @@ import Card from './Card';
 const Slider:React.FC = () => {
   return (
     <>
-    <section className='flex justify-center'>
+    <section className='flex justify-center bg-gray-100'>
       <section className=' max-w-[1440px] w-full'>
         <h1 className='text-4xl font-ModerEraBlack py-10 px-3'>Recent Properties</h1>
       </section>
     </section>
-    <div className='w-full flex justify-center items-center flex-col pb-10'>
+    <div className='w-full flex justify-center items-center flex-col pb-20 bg-gray-100 '>
           <section className='w-full max-w-[1440px] px-3'>
           <Carousel>
                             <CarouselContent>                            

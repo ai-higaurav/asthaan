@@ -2,9 +2,9 @@ import React from 'react';
 
 const Card:React.FC = () => {
   return (
-    <div className="flex flex-col gap-10 items-center rounded-sm border px-3 py-5">
-                <section className="">
-                    <img src="./images/image.png" alt="image" className="rounded-bl-[25px] max-w-[300px] " />
+    <div className="flex flex-col gap-10 items-center rounded-sm border px-3 py-5 bg-white">
+                <section className="overflow-hidden rounded-bl-[25px]">
+                    <img src="./images/image.png" alt="image" className="rounded-bl-[25px] max-w-[300px] hover:scale-125 transition-all ease-in-out duration-200 " />
                 </section>
               <section className='w-full pl-3'>
                     <section>
