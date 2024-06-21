@@ -14,4 +14,8 @@ app.use(express.json({
 }))
 app.use(cookieParser())
 
+// importing routes
+import property from './routes/property'
+
+app.use('/api/v1/property', property)
 export default app;

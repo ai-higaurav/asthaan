@@ -21,7 +21,7 @@ const SideBar:React.FC = () => {
         <DrawerContent className='w-fit h-svh rounded-none'>
             <DrawerHeader>
                 <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-                <DrawerDescription>This action cannot be undone.</DrawerDescription>
+                <DrawerDescription>This action canno t be undone.</DrawerDescription>
             </DrawerHeader>
             <DrawerFooter>
                 <Button>Submit</Button>

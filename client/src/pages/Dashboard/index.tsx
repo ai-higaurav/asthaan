@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import {
   LayoutDashboard,
@@ -10,11 +10,14 @@ import {
 import { useUser } from '@clerk/clerk-react';
 import { SignOutButton  } from '@clerk/clerk-react';
 
-
 import SideBar from '../Drawer';
 import { SkeletonCard } from '../Skelton';
+import AddProperty from '../AddProperty';
+
+
 const Dashboard:React.FC = () => {
   const {user , isLoaded}=useUser()
+  const [state , setState]=useState<string>('dashboard')
 
 
   return (
@@ -33,10 +36,10 @@ const Dashboard:React.FC = () => {
 
                 }
                   
-                <Button className='bg-transparent text-white text-md rounded-none  hover:rounded-none py-[25px] hover:bg-orange-600 w-full  justify-start items-center'>
+                <Button onClick={()=>setState('dashboard')} className='bg-transparent text-white text-md rounded-none  hover:rounded-none py-[25px] hover:bg-orange-600 w-full  justify-start items-center'>
                   <LayoutDashboard className="mr-5" size={20}/> Dashboard
                 </Button>
-                <Button className='bg-transparent text-white text-md rounded-none  hover:rounded-none py-[25px] hover:bg-orange-600 w-full  justify-start items-center'>
+                <Button onClick={()=>setState('property')} className='bg-transparent text-white text-md rounded-none  hover:rounded-none py-[25px] hover:bg-orange-600 w-full  justify-start items-center'>
                   <Building className="mr-5" size={20}/> Property
                 </Button>
                 <Button className='bg-transparent text-white text-md rounded-none  hover:rounded-none py-[25px] hover:bg-orange-600 w-full  justify-start items-center'>
@@ -68,15 +71,20 @@ const Dashboard:React.FC = () => {
 
             </section>
             <section className='sm:basis-8/12  flex-grow md:basis-10/12'>
+
               <section className='shadow-lg w-full'>
                 <section className='flex w-full justify-between bg-gray-100 items-center py-3 px-3'>
-                  <input type="search" placeholder='Search..' className='bg-white border border-gray-300 rounded-lg py-2 px-10 ' />
+                  <input type="search" placeholder='Search..' className='bg-white border border-gray-300 rounded-lg py-2 pl-10 ' />
                   <span className='flex justify-center items-center hover:cursor-pointer gap-3 '>
                    <Inbox className='text-orange-600 hover:text-gray-900'/>
                    <SideBar/>
                   </span>
                 </section>
               </section>
+
+              {
+                state === 'property' ? <AddProperty/> : null
+              }
             </section>
         </section>
     </div>
