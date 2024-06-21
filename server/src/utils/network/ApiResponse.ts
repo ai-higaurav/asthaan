@@ -1,6 +1,7 @@
 import { Response } from "express";
 
 class ApiResponse {
+    
     data:[] | {} 
     message:string
     statusCode:number
