@@ -1,99 +1,209 @@
-import mongoose, { Schema, Document, Types } from 'mongoose';
+import mongoose ,{Document , Schema , Types} from "mongoose";
 
-// Enum types
-enum ListingType {
-  SALE = 'SALE',
-  RENT = 'RENT',
-  LEASE = 'LEASE',
+enum listingType {
+  sale="sale"
 }
 
-enum PropertyType {
-  APARTMENT = 'APARTMENT',
-  HOUSE = 'HOUSE',
-  VILLA = 'VILLA',
-  COMMERCIAL_SPACE = 'COMMERCIAL_SPACE',
+enum propertyType{
+  apartment="apartment",
+  house="house",
+  villa="villa"
 }
 
-enum BuildingType {
-  RESIDENTIAL = 'RESIDENTIAL',
-  COMMERCIAL = 'COMMERCIAL',
-  MIXED_USE = 'MIXED_USE',
+enum buildingType{
+  residential="residential",
+  commercial="commercial",
 }
 
-enum FurnishedStatus {
-  FURNISHED = 'FURNISHED',
-  SEMI_FURNISHED = 'SEMI_FURNISHED',
-  UNFURNISHED = 'UNFURNISHED',
+enum furnishedStatus{
+  furnished="furnished",
+  semi_furnished="semi furnished",
+  full_furnished="full furnished"
 }
 
-enum PossessionStatus {
-  READY_TO_MOVE = 'READY_TO_MOVE',
-  UNDER_CONSTRUCTION = 'UNDER_CONSTRUCTION',
+enum possessionStatus{
+  ready_to_move="ready to move",
+  under_constraction="under constraction"
 }
 
-
-
-// Interface for Property document
 interface IProperty extends Document {
-  listingType: ListingType;
-  propertyType: PropertyType;
-  buildingType: BuildingType;
-  furnishedStatus: FurnishedStatus;
-  propertyAge: number;
-  possessionStatus: PossessionStatus;
-  unitNo?: number;
-  rooms: number;
-  bathroom: number;
-  view?: string;
-  area: number;
-  price: number;
-  city: string;
-  locality: string;
-  totalFloors?: number;
-  floorNo?: number;
-  balconyType?: 'none' | 'open' | 'covered';
-  amenities?: ('swimming pool' | 'gym' | 'park' | 'security' | 'playground' | 'club house')[];
-  waterSource?: 'municipal corporation' | 'borewell' | 'tank';
-  facingDirection?: 'north' | 'south' | 'east' | 'west' | 'north-east' | 'north-west' | 'south-east' | 'south-west';
-  additionalDetails?: string;
-  images: string[];
-  seller: Types.ObjectId ;
-  isApproved: boolean;
-  status: 'active' | 'sold';
+  listingType:listingType 
+  propertyType:propertyType
+  buildingType:buildingType
+  furnishedStatus:furnishedStatus
+  possessionStatus:possessionStatus
+  propertyAge:number
+  unitNo:number
+  rooms:number
+  bathroom:number
+  area:number
+  price:number
+  totalFloors?:number
+  floorNo?:number
+  balconyType ?:"none" | "covered" | "open"
+  amenities:[string]
+  waterSource:'municipal corporation' | 'borewell' | 'tank';
+  facingDirection:'north' | 'south' | 'east' | 'west' | 'north-east' | 'north-west' | 'south-east' | 'south-west'
+  additionalDetails:string
+  images:[string]
+  status:"active" | "sold"
+  isVerified:boolean
+  state:string,
+  city:string
+  locality:string
+  pinCode:number
+  seller :Types.ObjectId
+
 }
 
-// Property schema
-const propertySchema: Schema<IProperty> = new mongoose.Schema({
-  listingType: { type: String, required: true, enum: Object.values(ListingType) },
-  propertyType: { type: String, required: true, enum: Object.values(PropertyType) },
-  buildingType: { type: String, required: true, enum: Object.values(BuildingType) },
-  furnishedStatus: { type: String, required: true, enum: Object.values(FurnishedStatus), default: FurnishedStatus.UNFURNISHED },
-  propertyAge: { type: Number, required: true, min: 1 },
-  possessionStatus: { type: String, required: true, enum: Object.values(PossessionStatus) },
-  unitNo: { type: Number },
-  rooms: { type: Number, required: true, min: 1 },
-  bathroom: { type: Number, required: true, min: 1 },
-  view: { type: String },
-  area: { type: Number, required: true, min: 1 },
-  price: { type: Number, required: true, min: 0 },
-  city: { type: String, required: true },
-  locality: { type: String, required: true },
-  totalFloors: { type: Number, min: 1 },
-  floorNo: { type: Number, min: 1 },
-  balconyType: { type: String, enum: ['none', 'open', 'covered'] },
-  amenities: { type: [{ type: String, enum: ['swimming pool', 'gym', 'park', 'security', 'playground', 'club house'] }] },
-  waterSource: { type: String, enum: ['municipal corporation', 'borewell', 'tank'] },
-  facingDirection: { type: String, enum: ['north', 'south', 'east', 'west', 'north-east', 'north-west', 'south-east', 'south-west'] },
-  additionalDetails: { type: String },
-  images: { type: [String], required: true },
-  seller: { type: Schema.Types.ObjectId, ref:'User' , required: true },
-  isApproved: { type: Boolean, required: true, default: false },
-  status: { type: String, required: true, enum: ['active', 'sold'], default: 'active' },
-}, {
-  timestamps: true,
-});
+const propertySchema : Schema <IProperty> = new mongoose.Schema({
 
-// Create Property model
-const Property = mongoose.model<IProperty>('Property', propertySchema, 'property');
+  listingType:{
+    type:String,
+    enum:Object.values(listingType),
+    required:true
+    },
+  
+  propertyType:{
+    type:String,
+    enum:Object.values(propertyType),
+    required:true,
+  },
+
+  buildingType:{
+    type:String,
+    enum:Object.values(buildingType)
+  },
+
+  furnishedStatus:{
+    type:String,
+    enum:Object.values(furnishedStatus),
+    required:true
+  },
+
+  possessionStatus:{
+    type:String,
+    enum:Object.values(possessionStatus),
+    required:true
+  },
+
+  propertyAge:{
+    type:Number,
+    required:true
+  },
+
+  unitNo:{
+    type:Number,
+    required:true
+  },
+
+  rooms:{
+    type:Number,
+    required:true
+  },
+
+  bathroom:{
+    type:Number,
+    required:true
+  },
+  area:{
+    type:Number,
+    required:true
+  },
+  
+  price:{
+    type:Number,
+    required:true
+  },
+
+  totalFloors:{
+    type:Number,
+    required:true
+  },
+
+  floorNo:{
+    type:Number
+  },
+
+  balconyType:{
+    type:String,
+    enum:["none","covered","open"],
+    default:"none",
+    required:true
+  },
+
+ amenities:{
+  type:[{type:String}],
+  default:[],
+  required:true
+ },
+
+ waterSource:{
+  type:String,
+  enum:['municipal corporation' , 'borewell' , 'tank'],
+  default:"municipal corporation",
+  required:true
+ },
+
+ facingDirection: { 
+  type: String,
+  enum: ['north', 'south', 'east', 'west', 'north-east', 'north-west', 'south-east', 'south-west']
+ },
+
+ additionalDetails:{
+  type:String,
+  required:true
+ },
+
+ images:{
+  type:[String],
+  default:[]
+ },
+
+ status:{
+  type:String,
+  required:true,
+  enum:["active", "sold"],
+  default:"active"
+ },
+
+ isVerified:{
+  type:Boolean,
+  required:true,
+  default:false
+ },
+
+ state:{
+  type:String,
+  required:true
+ },
+
+ city:{
+  type:String,
+  required:true
+ },
+
+ locality:{
+  type:String,
+  required:true
+ },
+
+ pinCode:{
+  type:Number,
+  required:true
+ },
+
+ seller:{
+  type:Schema.Types.ObjectId,
+  ref:"Users"
+ }
+
+},
+{
+  timestamps:true
+}
+)
+
+const Property = mongoose.model<IProperty>('Property', propertySchema , 'Properties')
 
 export default Property;
